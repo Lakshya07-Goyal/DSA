@@ -7,6 +7,10 @@ int main(){
 
     cout<<(10<<2)<<endl;   //40
     cout<<(10>>1)<<endl;   //5
-   
+
+    cout<<sizeof(long long int)<<endl;    //8 byte
+    unsigned int x=-2;
+    cout<<x;    // it return big no. because we set x as unsigned int
+
    return 0;
 }
