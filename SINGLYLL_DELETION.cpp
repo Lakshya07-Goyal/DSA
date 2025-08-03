@@ -65,7 +65,7 @@ void insertatmiddle(Node*&head,Node*&tail,int pos,int d){
     }
     return;
 }
-void deleteatanypos(Node*&head,int pos){
+void deleteatanypos(Node*&tail,Node*&head,int pos){
     if(pos==1){
         Node*temp=head;
         head=head->next;
@@ -81,6 +81,9 @@ void deleteatanypos(Node*&head,int pos){
         temp1=temp2;
         temp2=temp2->next;
         cnt++;
+    }
+    if(temp2->next==NULL){
+        tail=temp1;
     }
     temp1->next=temp2->next;
     temp2->next=NULL;
@@ -109,14 +112,17 @@ int main(){
     insertatmiddle(head,tail,1,555);
     print(head);
     cout<<endl;
-    deleteatanypos(head,3);
+    deleteatanypos(tail,head,3);
     print(head);
     cout<<endl;
-     deleteatanypos(head,1);
+     deleteatanypos(tail,head,1);
     print(head);
     cout<<endl;
-     deleteatanypos(head,5);
+    deleteatanypos(tail,head,5);
     print(head);
     cout<<endl;
+    cout<<endl;
+    cout<<"tail "<< tail->data<<endl;
+    cout<<"head "<< head->data<<endl;
     return 0;
 }
